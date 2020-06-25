@@ -1,0 +1,58 @@
+inoremap jk <ESC>
+" map space as leader key
+let mapleader=" "
+nnoremap <SPACE> <Nop>
+
+" enable options
+set cursorline
+set multiple-cursors
+set surround
+set hlsearch
+set incsearch
+set ignorecase smartcase
+set keymodel=startsel
+set selectmode=key,template,refactoring
+" set ideajoin
+
+nnoremap vw viw
+nnoremap cw ciw
+
+" enter newlines
+" nnoremap <CR> o<ESC>
+" inoremap <CR> <C-o>:action EditorEnter<CR>
+
+" refactor
+nnoremap <space>rr :action RenameElement<cr>
+
+nnoremap <S-Left> :action EditorLeftWithSelection<CR>
+nnoremap <S-Right> :action EditorRightWithSelection<CR>
+nnoremap <S-Up> :action EditorUpWithSelection<CR>
+nnoremap <S-Down> :action EditorDownWithSelection<CR>
+
+inoremap <S-Left> <C-O>:action EditorLeftWithSelection<CR>
+inoremap <S-Right> <C-O>:action EditorRightWithSelection<CR>
+inoremap <S-Up> <C-O>:action EditorUpWithSelection<CR>
+inoremap <S-Down> <C-O>:action EditorDownWithSelection<CR>
+
+" built in search looks better
+nnoremap / :action Find<cr>
+but preserve ideavim search
+nnoremap g/ /
+
+" tab open action
+nmap <leader>gh :action PrevSplitter<CR>
+nmap <leader>gl :action NextSplitter<CR>
+nmap <leader>w :action NextSplitter<CR>
+nmap <leader>h :action PreviousTab<CR>
+nmap <leader>l :action NextTab<CR>
+nmap <leader>e :action RecentChangedFiles<CR>
+nmap <leader>fe :action RecentFiles<CR>
+nmap <leader>fx :action CloseEditor<CR>
+nmap <leader>fs :action Switcher<CR>
+nmap <leader>fd :action NewScratchBuffer<CR>
+nmap <leader>fw :action SaveDocument<CR>
+nmap <leader>fa :action SelectInProjectView<CR>
+nmap <leader>fl :nohls<CR>
+
+map <leader>[ :action EditorCodeBlockStart<CR>
+map <leader>] :action EditorCodeBlockEnd<CR>
